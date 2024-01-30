@@ -2,7 +2,7 @@ def caching_fibonacci():  # ФУНКЦІЯ caching_fibonacci
     cache = {}  # Створити порожній словник cache
 
     def fibonacci(n):
-        if n <= 0: # Якщо n <= 0, повернути 0
+        if n <= 0:  # Якщо n <= 0, повернути 0
             return 0
         elif n == 1:  # Якщо n == 1, повернути 1
             return 1
@@ -12,7 +12,7 @@ def caching_fibonacci():  # ФУНКЦІЯ caching_fibonacci
             cache[n] = fibonacci(n - 1) + fibonacci(n - 2)
             return cache[n]  # Повернути cache[n]
 
-    return fibonacci
+    return fibonacci   # Повернути функцію fibonacci
 
 
 # Приклад використання
