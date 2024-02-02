@@ -9,10 +9,8 @@ def input_error(func):
             return "Give me name and phone please."
         except IndexError:
             return "Enter the argument for the command."
-
     return inner
 
-contacts = {}
 
 @input_error
 def parse_input(command):
@@ -22,10 +20,10 @@ def parse_input(command):
     if parts[0] == "hello":
         return "How can I help you?"
     elif parts[0] == "add" and len(parts) == 3:
-        if parts[2].isdigit():
+        if parts[2].isdigit(): 
             return add_contact(parts[1], parts[2])
-        else:
-            return "Phone number is not digit."
+        else:   # Якщо телефон не є цифрами
+            return "Phone number is not digit."  # Повідомляємо користувача 
     elif parts[0] == "change" and len(parts) == 3:
         return change_contact(parts[1], parts[2])
     elif parts[0] == "phone" and len(parts) == 2:
@@ -69,9 +67,10 @@ def show_all():
     else:
         return "No contacts found."
 
-# Основна функція для управління основним циклом обробки команд.
 
+# Основна функція для управління основним циклом обробки команд.
 def main():
+    contacts = {}  #  створюємо порожній словник для зберігання контактів
     while True:
         # Зчитуємо введену користувачем команду.
         command = input("Enter command: ")
@@ -82,6 +81,7 @@ def main():
         # Якщо користувач ввів "exit" або "close", завершуємо виконання програми.
         if response == "Good bye!":
             break
+
 
 # Перевіряємо, чи цей скрипт є основним і викликаємо функцію main.
 if __name__ == "__main__":
