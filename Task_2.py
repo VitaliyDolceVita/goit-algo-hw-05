@@ -1,4 +1,4 @@
-import re
+import re  # імпортуємо необхіді модулі
 from typing import Callable
 
 def generator_numbers(text: str):
